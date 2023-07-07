@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container-grid-prime{
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "filtro filtro"
+    "principal principal"
+    "footer footer";
+}
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(255, 104, 3);
+    color: white;
+    font-weight: 100;
+}
+.filter-section{
+    grid-area: filtro;
+}
+.principal-section{
+    grid-area: principal;
+}
+footer{
+    grid-area: footer;
+}
+.container-box h4{
+    margin: 0;
+
+    
+}
