@@ -5,6 +5,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 .container-grid-prime{
+    height: 100vh;
     display: grid;
     grid-template-areas: 
     "nav nav"
@@ -15,24 +16,239 @@ body{
 nav{
     grid-area: nav;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 22vh;
+    align-items: center;
     width: 100vw;
-    height: 8vh;
+    height: 10vh;
     background-color: rgb(255, 104, 3);
     color: white;
     font-weight: 100;
 }
+.container-box{
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+.container-box h4{
+    margin: 0;   
+}
 .filter-section{
     grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100vw;
+    height: 12vh;
+    background-color: rgb(234, 234, 234);
+}
+.filter-section h3{
+    margin: 0;
+    text-align: center;
+}
+.container-box-list{
+    display: flex;
+    justify-content: space-around;
+    gap: 18vh;
+    background-color: white;
+    width: 80%;
+    height: 35%;
+    border-radius: .5em;
 }
 .principal-section{
     grid-area: principal;
+    height: 68vh;
+}
+.container-box-tarjet{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 60vh;
+    width: 100%;
+    height: 60vh;
+    margin-bottom: 15px;
+    text-align: center;
+    overflow-y: scroll;
+}
+.item{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px;
+    padding-top: 10px;
+
+}
+.container-box-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 55vh;
+    border: solid 1px rgb(205, 205, 205);;
+    border-radius: .5em;
+}
+.container-box-img h5{
+    margin-top: 10px;
+    margin-bottom:0;
+}
+input{
+    width: 12vh;
+    height: 8vw;
+    color: rgb(255, 255, 255);
+    background-color:  rgb(255, 104, 3);
+    border: 0;
+    border-radius: .3em;
+}
+input:hover{
+    background-color: white;
+    color: rgb(255,104,3);
+    border: solid 1px rgb(255,104,3);
+}
+.container-box-pagination{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+}
+.cube{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 5vh;
+    font-size: 1em;
+    color: rgb(255,104,3);;
+    border: solid 1px rgb(205, 205, 205);
+    font-weight: bold;
+    
 }
 footer{
     grid-area: footer;
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(255,104,3);
+    text-align: center;
+    padding-top: 2vh;
+    color: white;
 }
-.container-box h4{
+footer h4{
     margin: 0;
-
-    
+}
+@media (min-width:576px){
+    .container-grid-prime{
+        grid-template-areas: 
+        "nav nav"
+        "filtro principal"
+        "filtro principal"
+        "footer footer";
+    } 
+    nav{
+        height: auto;
+        width: 96vw;
+        gap: 0;
+        justify-content: space-between;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .hamb-icon{
+        visibility: hidden;
+    }
+    ul{
+        visibility: visible;
+        list-style: none;
+        display: flex;
+        gap: 3vw;
+        font-weight: 300;
+    }
+    .filter-section{
+      width: 30vw;
+      height: 100%;
+      justify-content: flex-start;
+      padding-top: 2vh;
+    }
+    .container-box-list{
+        gap: 2vh;
+        width: 80%;
+        font-size: 1em;
+        height: 4vh;
+    }
+    .principal-section{
+        width: 65vw;
+    }
+    .container-box-tarjet{
+        grid-template-columns: auto auto;
+        grid-template-rows: 60vh;
+    }
+    .container-box-img{
+        height: 45vh;
+    }
+    .item{
+        padding-top: 5vh;
+    }
+    input{
+        height: 5vw;
+    }
+}
+@media (min-width:992px){
+    .container-grid-prime{
+        grid-template-areas: 
+        "nav filtro"
+        "nav principal"
+        "nav principal"
+        "footer principal";
+    } 
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        width: 25vw;
+        gap: 0;
+        padding: 0;
+        padding-top: 5vh;
+    }
+    .hamb-icon{
+        visibility: hidden;
+    }
+    ul{
+        visibility: visible;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5vw;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        padding-top: 5vh;
+    }
+    .filter-section{
+      width: 75vw;
+      height: auto;
+    }
+    .container-box-list{
+        gap: 5vh;
+    }
+    .principal-section{
+        width: 75vw;
+    }
+    .container-box-tarjet{
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 70vh;
+        height: 70vh;
+    }
+    .container-box-img{
+        height: 45vh;
+    }
+    .item{
+        padding-top: 5vh;
+        height: 50vh;
+    }
+    input{
+        height: 5vw;
+    }
+    footer{
+        width: 25vw;
+    }
 }
